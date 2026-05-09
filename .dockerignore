@@ -1,0 +1,10 @@
+target/
+.git/
+.idea/
+.vscode/
+*.iml
+README.md
+
+# local env files
+.env
+
