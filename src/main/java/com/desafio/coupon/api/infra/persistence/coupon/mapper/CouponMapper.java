@@ -4,12 +4,14 @@ import com.desafio.coupon.api.domain.coupon.model.Coupon;
 import com.desafio.coupon.api.infra.persistence.coupon.entity.CouponEntity;
 import org.springframework.stereotype.Component;
 
+import java.util.Objects;
+
 @Component
 public class CouponMapper {
 
 
     public Coupon toDomain(CouponEntity entity) {
-        if (entity == null) {
+        if (Objects.isNull(entity)) {
             return null;
         }
 
@@ -26,7 +28,7 @@ public class CouponMapper {
     }
 
     public CouponEntity toEntity(Coupon coupon) {
-        if (coupon == null) {
+        if (Objects.isNull(coupon)) {
             return null;
         }
         

@@ -5,7 +5,6 @@ import com.desafio.coupon.api.domain.coupon.exception.InvalidCouponCodeException
 import com.desafio.coupon.api.domain.coupon.exception.InvalidCouponDiscountValueException;
 import com.desafio.coupon.api.domain.coupon.exception.InvalidCouponExpirationDateException;
 import lombok.Getter;
-import org.apache.logging.log4j.util.Strings;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -87,10 +86,6 @@ public class Coupon {
     }
 
     private static String normalizeCode(String code) {
-        if (Strings.isBlank(code)) {
-            throw new InvalidCouponCodeException();
-        }
-
         String normalizedCode = code.replaceAll("[^a-zA-Z0-9]", "");
 
         if (normalizedCode.length() > DEFAULT_CODE_LENGTH) {
