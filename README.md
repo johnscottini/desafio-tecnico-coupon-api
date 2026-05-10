@@ -66,8 +66,11 @@ Cada ambiente tem suas próprias properties, facilitando a separação das confi
 - **Lombok**
 - **H2 Database**
 - **JUnit 5 + Mockito** (testes)
+- **Docker**
 
 ## Executar
+
+### Localmente
 
 ```bash
 # Development
@@ -76,6 +79,17 @@ mvn spring-boot:run -Dspring-boot.run.arguments="--spring.profiles.active=dev"
 # Testes
 mvn test
 ```
+
+### Docker
+
+A aplicação possui container Docker, segue instruções de execução:
+
+```bash
+# Build e execução
+docker-compose up --build
+```
+
+A API estará disponível em `http://localhost:8080` com o profile `dev` ativado por padrão.
 
 ## API Endpoints
 
