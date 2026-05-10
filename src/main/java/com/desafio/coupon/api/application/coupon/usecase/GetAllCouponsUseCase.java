@@ -2,11 +2,11 @@ package com.desafio.coupon.api.application.coupon.usecase;
 
 import com.desafio.coupon.api.application.coupon.dto.CouponResponseDto;
 import com.desafio.coupon.api.application.coupon.service.CouponService;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class GetAllCouponsUseCase {
 
     private final CouponService couponService;
@@ -19,4 +19,3 @@ public class GetAllCouponsUseCase {
         return couponService.findAllActive();
     }
 }
-
