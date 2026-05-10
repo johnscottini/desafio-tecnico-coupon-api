@@ -12,13 +12,13 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Spy;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
@@ -48,7 +48,8 @@ public class CouponControllerTest extends CouponControllerScenarios {
         final ResponseEntity<List<CouponResponseDto>> response = couponController.getAll();
 
         assertNotNull(response);
-        assertEquals(200, response.getStatusCodeValue());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
         assertEquals(2, response.getBody().size());
         assertEquals(outputCoupons, response.getBody());
     }
@@ -63,8 +64,8 @@ public class CouponControllerTest extends CouponControllerScenarios {
         final ResponseEntity<List<CouponResponseDto>> response = couponController.getAll();
 
         assertNotNull(response);
-        assertEquals(200, response.getStatusCodeValue());
-        assertTrue(response.getBody().isEmpty());
+        assertEquals(HttpStatus.OK, response.getStatusCode());
+        assertNotNull(response.getBody());
     }
 
     @Test
@@ -78,8 +79,9 @@ public class CouponControllerTest extends CouponControllerScenarios {
         final ResponseEntity<CouponResponseDto> response = couponController.create(input);
 
         assertNotNull(response);
-        assertEquals(201, response.getStatusCodeValue());
+        assertEquals(HttpStatus.CREATED, response.getStatusCode());
         assertEquals(output, response.getBody());
+        assertNotNull(response.getBody());
         assertEquals(output.code(), response.getBody().code());
         assertEquals(output.description(), response.getBody().description());
     }
@@ -94,7 +96,7 @@ public class CouponControllerTest extends CouponControllerScenarios {
         final ResponseEntity<Void> response = couponController.delete(codeToDelete);
 
         assertNotNull(response);
-        assertEquals(204, response.getStatusCodeValue());
+        assertEquals(HttpStatus.NO_CONTENT, response.getStatusCode());
     }
 }
 

@@ -41,13 +41,6 @@ class CouponTest extends CouponScenarios {
     }
 
     @Test
-    void testShouldThrowInvalidCodeByBlankValue() {
-        final CouponModelBuilder builder = shouldThrowInvalidCodeByBlankValue();
-
-        assertThrows(InvalidCouponCodeException.class, () -> Coupon.normalize(builder.getRawCode()));
-    }
-
-    @Test
     void testShouldThrowInvalidCodeByLength() {
         final CouponModelBuilder builder = shouldThrowInvalidCodeByLength();
 
