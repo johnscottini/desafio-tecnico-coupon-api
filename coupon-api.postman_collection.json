@@ -1,0 +1,95 @@
+{
+  "info": {
+    "_postman_id": "3c0de010-e3b3-4ec1-b084-d4bc8bd9e69f",
+    "name": "coupon-api",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "25548523"
+  },
+  "item": [
+    {
+      "name": "Create coupon",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"code\": \"AB*12\",\r\n  \"description\": \"Cupom de desconto para primeira compra\",\r\n  \"discountValue\": 0.5,\r\n  \"expirationDate\": \"2025-12-31T15:00:00\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/coupons",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "coupons"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete coupon",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/api/coupons/00AB12",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "coupons",
+            "00AB12"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get all coupons",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"code\": \"AB*12\",\r\n  \"description\": \"Cupom de desconto para primeira compra\",\r\n  \"discountValue\": 10,\r\n  \"expirationDate\": \"2026-12-31T15:00:00\"\r\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/coupons",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "coupons"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "New Request",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    }
+  ]
+}
