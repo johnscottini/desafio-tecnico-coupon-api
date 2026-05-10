@@ -2,6 +2,8 @@
 
 Uma API REST para gerenciamento de cupons.
 
+Obs: No repositório está o arquivo da collection do postman para executar as requisições.
+
 ## Visão Geral
 
 ### Clean Architecture
